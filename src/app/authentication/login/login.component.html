@@ -1,0 +1,8 @@
+<div class="container gradient-bg">
+    @if(authenticationService.user() === null) {
+    <login-form [loginStatus]="loginService.status()" (login)="loginService.login$.next($event)" />
+    <a routerLink="/register">Create account</a>
+    } @else {
+    <mat-spinner diameter="50" />
+    }
+</div>
